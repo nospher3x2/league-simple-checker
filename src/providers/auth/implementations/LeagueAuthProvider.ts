@@ -27,6 +27,7 @@ class LeagueAuthProvider implements IAuthProvider {
                 'Content-Type': 'application/json',
                 'User-Agent': 'RiotClient/51.0.0.4429735.4381201 rso-auth (Windows;10;;Professional, x64)'
             },
+            proxy: config.RIOT_AUTH_PROXY || undefined,
             json: true,
             agent: new HttpsCookieAgent({
                 cookies: { jar },

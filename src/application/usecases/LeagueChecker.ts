@@ -34,6 +34,7 @@ export class LeagueChecker {
 
             const ledgeProvider = new LedgeProvider(account.league);
             let data: { [key: string]: any } = {}
+            
             await Promise.all([
                 await ledgeProvider.getSummoner(),
                 await ledgeProvider.getInventory(),

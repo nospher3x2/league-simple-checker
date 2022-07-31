@@ -13,7 +13,6 @@ import LeagueChecker from '../../application/usecases/LeagueChecker';
 const FILE_PATH = `${process.cwd()}/accounts.txt`
 export class App {
 
-    private static readonly MAX_WORKERS = 1000;
     private readonly accountRepository: IAccountRepository;
     private readonly ledgeAuthProvider: ILedgeAuthProvider;
     private list: string[] = [];
@@ -48,7 +47,7 @@ export class App {
         }
 
         console.log(colors.magenta(`[LEAGUE CHECKER] Total ${this.list.length} accounts to check.`));
-        for (let i = 0; i < App.MAX_WORKERS; i++) {
+        for (let i = 0; i < config.MAX_WORKERS; i++) {
             this.handle();
         }
     }
